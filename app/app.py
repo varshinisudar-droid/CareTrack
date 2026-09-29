@@ -1668,7 +1668,8 @@ elif page == "🕒 Patient Timeline":
         timeline_df = pd.DataFrame(
             timeline
         )
-
+        timeline_df["Date"] = pd.to_datetime(timeline_df["Date"])
+        
         timeline_df = timeline_df.sort_values(
             "Date",
             ascending=False
